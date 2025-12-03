@@ -70,6 +70,18 @@ public class Colas {
                         lq = (P0 *Math.pow(landa / miu, c) * sumatoria2) / (factorial((int) c) * Math.pow(1- sumatoria2, 2));
                         System.out.println("Lq = " + lq);
                         //
+                        L = lq+(landa / miu);
+                        System.out.println("L = " + L);
+                        //
+                        w = L /landa;
+                        System.out.println("W = " + w);
+                        //
+                        wq = lq / landa;
+                        System.out.println("Wq = " + wq);
+                        //
+                        System.out.println("p = " + p2);
+                        break;
+
                         
                         
             } 

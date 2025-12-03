@@ -20,7 +20,7 @@ public class Colas {
 
             switch(opcion){
                 case 1:
-                    //MM!
+                    //MM1
                     System.out.println("Cuantos pedidos atiende por hora?");
                     int miu = lector.nextDouble();//Pedidos atendidos por hora
                     System.out.println("Cuantos cliente atiende por hora?");

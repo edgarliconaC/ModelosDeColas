@@ -7,7 +7,7 @@ public class Colas {
     public static void main(String[] args) {
         Scanner lector = new Scanner(System.in); 
 
-        double lq, p, wq, w, p2, sumatoria = 0, sumatoria2, P0, L;
+        double lq, p, wq, w, p2, sumatoria = 0, sumatoria2, P0, L, k;
 
         byte opcion = 0;
         do {    
@@ -82,9 +82,31 @@ public class Colas {
                         System.out.println("p = " + p2);
                         break;
 
-                        
-                        
-            } 
+                        case 3:
+                            //M/M/1/k
+                            System.out.println("Ingresa la taza de llegada(λ)");
+                            landa = lector.nextDouble();
+                            System.out.println("Ingresa la taza de servicio(μ)");
+                            miu = lector.nextDouble();
+                            System.out.println("Ingresa la capacidad del sistema(K)");
+                            k = lector.nextDouble();
+                            //
+                            p2 = landa / miu;
+                            //
+                            if (p2 != 1){
+                                p0 = (1 - p2) / (1 - Math.pow(p2, k + 1));
+                            } else {
+                                p0 = 1.0 / (k + 1);
+                            }
+                            System.out.println("P0 = " + p0);
+                            //
+                            L = (p2 * (1 - (k + 1) * Math.pow(p2, k)+ k * Math.pow(p2, ((1 - p2) * (1 - Math.pow(p2, k + 1 ))))));
+                            System.out.println("L = " + L);
+                            //
+                            lamda = landa * (1 - Math.pow(p2, k) * P0);
+                            //
+                            w = L / lamda;
+                            System.out.println("W = " + w);
         } while (opcion != 4);
     }
 }

@@ -12,9 +12,10 @@ public class Colas {
         byte opcion = 0;
         do {    
 
-            System.out.println("Menu");
+            System.out.println("\n \n \t \tMenu");
             System.out.println("Que modelo de cola desea utilizar?");
             System.out.println("1. M/M/1");
+            System.println("4. Salir");
             opcion = lector.nextByte();
 
             switch(opcion){
@@ -27,17 +28,22 @@ public class Colas {
 
                     //Utilizacion de sistema
                     p = landa /miu;
-                    System.out.println("P ="+ p);
+                    System.out.println("P =" + p);
 
+                    //Numero de promedio de cliente en la cola
+                    lq = (Math.pow(landa, 2)) / ((miu) * (miu -landa));
+                    System.out.println("Lq = " + lq);
 
+                    //Tiempo promedio de espera en la colaa
+                    wq = lq /landa;
+                    System.out.println("Wq = " + wq + " hrs");
 
-
+                    //Tiempo total en el sistema
+                    w = wq + (1/miu);
+                    System.out.println("W = "+ w + " hrs");
 
                     break;
-            }
-
-            
-        } while (opcion != 5);
+            } 
+        } while (opcion != 4);
     }
-
 }

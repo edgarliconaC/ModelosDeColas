@@ -11,7 +11,6 @@ public class Colas {
 
         byte opcion = 0;
         do {    
-
             System.out.println("\n \n \t \tMenu");
             System.out.println("Que modelo de cola desea utilizar?");
             System.out.println("1. M/M/1");
@@ -106,7 +105,25 @@ public class Colas {
                             lamda = landa * (1 - Math.pow(p2, k) * P0);
                             //
                             w = L / lamda;
-                            System.out.println("W = " + w);
-        } while (opcion != 4);
+                            //
+                            wq = w - (1 - miu);
+                            //
+                            lq = lamda /wq;
+                            System.out.println("Lq = " + lq);
+                            System.out.println("w = " + w);
+                            System.out.println("Wq = " + wq);
+                            System.out.println("p = " + p2);
+                            System.out.println("λ efectivo = " + lamda);
+                            break;
+                    }
+            } while (opcion != 4);
+    }
+
+    public static int factorial(int n) {
+        int f = 1;
+        for (int i = 1; i <= n; i++) {
+            f *= i;
+        }
+        return f;
     }
 }

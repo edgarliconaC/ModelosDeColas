@@ -1,5 +1,3 @@
-package colas;
-
 import java.util.Scanner;
 
 public class Colas {
@@ -16,7 +14,7 @@ public class Colas {
             System.out.println("1. M/M/1");
             System.out.println("2. M/M/c");
             System.out.println("3. M/M/1/k");
-            System.println("4. Salir");
+            System.out.println("4. Salir");
             opcion = lector.nextByte();
 
             switch(opcion){
@@ -29,7 +27,7 @@ public class Colas {
 
                     //Utilizacion de sistema
                     p = landa /miu;
-                    System.out.println("P =" + p);
+                    System.out.println("P = " + p);
 
                     //Numero de promedio de cliente en la cola
                     lq = (Math.pow(landa, 2)) / ((miu) * (miu -landa));
@@ -93,27 +91,27 @@ public class Colas {
                             p2 = landa / miu;
                             //
                             if (p2 != 1){
-                                p0 = (1 - p2) / (1 - Math.pow(p2, k + 1));
+                                P0 = (1 - p2) / (1 - Math.pow(p2, k + 1));
                             } else {
-                                p0 = 1.0 / (k + 1);
+                                P0 = 1.0 / (k + 1);
                             }
-                            System.out.println("P0 = " + p0);
+                            System.out.println("P0 = " + P0);
                             //
                             L = (p2 * (1 - (k + 1) * Math.pow(p2, k)+ k * Math.pow(p2, ((1 - p2) * (1 - Math.pow(p2, k + 1 ))))));
                             System.out.println("L = " + L);
                             //
-                            lamda = landa * (1 - Math.pow(p2, k) * P0);
+                            landa = landa * (1 - Math.pow(p2, k) * P0);
                             //
-                            w = L / lamda;
+                            w = L / landa;
                             //
                             wq = w - (1 - miu);
                             //
-                            lq = lamda /wq;
+                            lq = landa /wq;
                             System.out.println("Lq = " + lq);
                             System.out.println("w = " + w);
                             System.out.println("Wq = " + wq);
                             System.out.println("p = " + p2);
-                            System.out.println("λ efectivo = " + lamda);
+                            System.out.println("λ efectivo = " + landa);
                             break;
                     }
             } while (opcion != 4);
